@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/homeFragment">
+
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="edu.cs371m.spotimedia.ui.HomeFragment"
+            android:label="My Profile" >
+        <!-- Might need to add arguments for these actions -->
+        <action
+            android:id="@+id/action_homeFragment_to_albumFragment"
+            app:destination="@id/albumFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_artistFragment"
+            app:destination="@id/artistFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_feedFragment"
+            app:destination="@id/feedFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="edu.cs371m.spotimedia.ui.AlbumFragment"
+        android:label="Album" >
+        <argument
+            android:name="post"
+            app:argType="edu.cs371m.spotimedia.api.Album"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/artistFragment"
+        android:name="edu.cs371m.spotimedia.ui.ArtistFragment"
+        android:label="Artist" >
+        <argument
+            android:name="post"
+            app:argType="edu.cs371m.spotimedia.api.Artist"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="edu.cs371m.spotimedia.ui.FeedFragment"
+        android:label="Feed">
+        <action
+            android:id="@+id/action_feedFragment_to_otherFragment"
+            app:destination="@id/otherFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/otherFragment"
+        android:name="edu.cs371m.spotimedia.ui.OtherFragment"
+        android:label="Other Profile" >
+        <argument
+            android:name="accessToken"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_OtherFragment_to_albumFragment"
+            app:destination="@id/albumFragment"/>
+        <action
+            android:id="@+id/action_OtherFragment_to_artistFragment"
+            app:destination="@id/artistFragment"/>
+        <action
+            android:id="@+id/action_OtherFragment_to_feedFragment"
+            app:destination="@id/feedFragment"/>
+    </fragment>
+</navigation>

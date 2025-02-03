@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- All the sizes need to be set (width, height, textsize, etc) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:id="@+id/profile_pic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_name"
+                android:textSize="40sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal">
+            <TextView
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Followers: "/>
+
+            <TextView
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/follower_count"/>
+        </LinearLayout>
+
+        <!-- For these we can use the fragment_rv.xml as the binding in kotlin classes-->
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Top Tracks"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/top_tracks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            />
+
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Top Artists"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/top_artists"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
